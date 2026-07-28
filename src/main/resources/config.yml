@@ -1,0 +1,60 @@
+# ==========================================
+# BackOnDie Configuration File (1.21.1+)
+# ==========================================
+
+database:
+  type: "SQLITE" # Lựa chọn: SQLITE hoặc MYSQL
+  mysql:
+    host: "localhost"
+    port: 3306
+    database: "minecraft"
+    username: "root"
+    password: "password"
+    pool-size: 10
+
+settings:
+  # Bắt buộc mộ gần nhất phải còn tồn tại mới cho phép /back
+  require-existing-grave: true
+  
+  # Thời gian chờ trước khi dịch chuyển (giây). Đặt 0 để tắt.
+  warmup-seconds: 5
+  
+  # Hủy dịch chuyển nếu người chơi di chuyển trong thời gian chờ
+  cancel-on-move: true
+  
+  # Thời gian hồi lệnh /back (giây). Đặt 0 để tắt.
+  cooldown-seconds: 60
+
+# Cấu hình âm thanh & hiệu ứng (Sử dụng Bukkit Keys chuẩn 1.21)
+effects:
+  teleport-sound: "ENTITY_ENDERMAN_TELEPORT"
+  warmup-sound: "BLOCK_NOTE_BLOCK_PLING"
+  fail-sound: "ENTITY_VILLAGER_NO"
+  particle: "PORTAL"
+  particle-count: 50
+
+# Hệ thống thông báo hỗ trợ MiniMessage Formatting (<green>, <gradient:...>, <hover:...>)
+messages:
+  prefix: "<gradient:#ff5555:#ffaa00>[BackOnDie]</gradient> "
+  no-permission: "<red>Bạn không có quyền thực hiện lệnh này!</red>"
+  no-death-record: "<red>Không tìm thấy dữ liệu lần chết nào của bạn!</red>"
+  grave-not-found: "<red>Ngôi mộ gần nhất của bạn không còn tồn tại hoặc đã bị dọn dẹp!</red>"
+  world-not-found: "<red>Thế giới nơi bạn chết không còn tồn tại!</red>"
+  cooldown: "<yellow>Bạn cần chờ <red><time></red> giây nữa để tiếp tục dùng /back.</yellow>"
+  warmup-start: "<green>Đang chuẩn bị dịch chuyển về mộ trong <gold><time></gold> giây... Đừng di chuyển!</green>"
+  warmup-cancelled: "<red>Dịch chuyển bị hủy do bạn đã di chuyển!</red>"
+  teleport-success: "<green>Dịch chuyển thành công về vị trí chết gần nhất!</green>"
+  reload-success: "<green>Đã tải lại cấu hình plugin thành công!</green>"
+  clear-success: "<green>Đã xóa lịch sử chết của người chơi <yellow><player></yellow>.</green>"
+  
+  title:
+    enabled: true
+    main: "<gradient:#55ff55:#00aa00>DỊCH CHUYỂN!</gradient>"
+    sub: "<gray>Đã về lại vị trí mộ gần nhất</gray>"
+    fade-in: 10
+    stay: 40
+    fade-out: 10
+
+  actionbar:
+    enabled: true
+    warmup: "<yellow>Dịch chuyển sau <gold><time>s</gold>... Giữ nguyên vị trí!</yellow>"
