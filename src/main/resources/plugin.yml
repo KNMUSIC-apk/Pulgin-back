@@ -1,0 +1,21 @@
+name: BackOnDie
+version: 1.0.0
+main: com.backondie.BackOnDie
+api-version: '1.21'
+author: BackOnDieTeam
+description: Plugin ho tro /back ve mo khi chet cho Paper/Purpur 1.21.1+
+softdepend: [PlaceholderAPI, Graves, GraveStone]
+
+commands:
+  back:
+    description: Dich chuyen ve vi tri mo lan chet gan nhat.
+    permission: backondie.use
+    aliases: [backondie]
+
+permissions:
+  backondie.use:
+    description: Cho phap su dung lenh /back
+    default: true
+  backondie.admin:
+    description: Quyen quan tri viên (/back reload, info, clear)
+    default: op
