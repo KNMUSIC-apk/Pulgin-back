@@ -1,4 +1,4 @@
-name: Back vip
+name: Build Plugin
 
 on:
   push:
